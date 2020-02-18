@@ -7,9 +7,14 @@ public class Demo {
     Chicken hen = new Hen();
     Chicken childChicken = new ChildChicken();
 
-    System.out.format("100元可以买%s %d只\n", cock.getType(), (int)(100 / cock.getPrice()));
-    System.out.format("100元可以买%s %d只\n", hen.getType(), (int)(100 / hen.getPrice()));
-    System.out.format("100元可以买%s %d只\n", childChicken.getType(), (int)(100 / childChicken.getPrice()));
+    int money = 100;
+    countResult(money, cock);
+    countResult(money, hen);
+    countResult(money, childChicken);
+  }
+
+  private static void countResult(int money, Chicken cock) {
+    System.out.format("%s元可以买%s %d只\n", money, cock.getType(), (int)(money / cock.getPrice()));
   }
 
 }
